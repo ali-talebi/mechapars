@@ -1,0 +1,245 @@
+{% load static %}
+{% load jformat %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Link Of CSS -->
+        <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/boxicon.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/flaticon_mycollection.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/scrollCue.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/rtl.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/responsive.css' %}">
+
+        <title>وبلاگ - مکا</title>
+        <link rel="icon" type="image/png" href="{% static 'front/assets/images/favicon.png' %}">
+    </head>
+
+    <body>
+        <!-- Preloader -->
+
+        <!-- Preloader End -->
+        
+        <!-- Start Header Area -->
+        <div class="header-area">
+            <!-- Start Top Header Area -->
+            <div class="top-header-area style">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="top-header-info">
+                                <ul>
+                                    <li>نشانی:<a href="https://www.google.com/" target="_blank">No. 12, Ribbon Wales  Australia</a>
+                                    </li>
+                                    <li>به ما ایمیل بزنید:<a href="/cdn-cgi/l/email-protection#d2b6bda4bbe6e1e0e792b5bfb3bbbefcb1bdbf"><span class="__cf_email__" data-cfemail="11757e67782522232451767c70787d3f727e7c">[ایمیل محافظت شده]</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-4">
+                            <div class="top-header-social">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class='bx bxl-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/" target="_blank">
+                                            <i class='bx bxl-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/" target="_blank">
+                                            <i class='bx bxl-instagram'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com/" target="_blank">
+                                            <i class='bx bxl-google'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Top Header Area -->
+    
+            <!-- Navbar Area Start -->
+
+                {% block navbar %}
+                {% include 'front/navbar.html'  %}
+                {% endblock navbar  %}
+            <!-- Navbar Area End -->
+        </div>
+
+        <!-- Start Page Banner Area -->
+        <div class="page-banner-area">
+            <div class="container">
+                <div class="page-heading">
+                    <h1>وبلاگ</h1>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:home'  %}">صفحه اصلی</a>
+                        </li>
+                        <li>وبلاگ</li>
+                    </ul>
+                    <!-- shape -->
+                    <img class="page-shape-1 moveVertical" src="{% static 'front/assets/images/shape/page-banner-shape-1.png' %}" alt="image">
+                    <img class="page-shape-2 rotate" src="{% static 'front/assets/images/shape/page-banner-shape-2.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner Area -->
+
+        <!-- Start Blog Page Area -->
+        <div class="blog-page-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="said-bar-blog">
+                            <div class="search-box">
+                                <form class="search-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button type="submit" class="search-btn">
+                                        <i class="bx bx-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="category">
+                            <h4>دسته بندی</h4>
+                            <ul>
+                                {% for i in categories %}
+                                <li>
+                                    <i class='bx bxs-circle'></i>
+                                    <a href="#">{{ i }}</a>
+                                </li>
+                                {% endfor  %}
+
+                            </ul>
+                        </div>
+
+                        <div class="popular-post">
+                            <h4>آخرین پست ها</h4>
+                            {% for i in top_last_post %}
+                            <div class="single-recent-post d-flex align-items-center">
+                                <a class="thumb" href="{{ i.get_absolute_url }}">
+                                    <span class="full-image cover bg-1"></span>
+                                </a>
+                                <div class="single-recent-info">
+                                    <h5 class="mt-0">
+                                        <a href="#">{{ i.title }}</a>
+                                    </h5>
+                                    <p>{{ i.time |jformat:"%A %d %B %Y %H:%M" }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="tags">
+                            <h5>برچسب های محبوب</h5>
+                            <ul>
+                                {% for i in tags %}
+                                <li>
+                                    <a href="#">{{ i.name }}</a>
+                                </li>
+                                {% endfor  %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            {% for i in posts  %}
+                            <div class="col-lg-6">
+                                <div class="blog-card">
+                                    <a href="{{ i.get_absolute_url }}">
+                                        <img class="blog-image-1" src="{{ i.picture.url }}" alt="icon">
+                                    </a>
+                                    <ul>
+                                        <li><p>{{ i.time |jformat:"%A %d %B %Y %H:%M" }}</p></li>
+                                        <li> توسط <a href="#">{{ i.author }}</a></li>
+                                    </ul>
+                                    <h3>
+                                        <a href="{{ i.get_absolute_url }}">{{ i.title }}</a>
+                                    </h3>
+                                    <a href="{{ i.get_absolute_url }}" class="read-more">ادامه مطلب</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+            
+                        <div class="service-pagination">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="blog.html" aria-label="Next">
+                                            <span aria-hidden="true">
+                                                <i class='bx bx-chevron-left'></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link active" href="#">01</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">02</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">03</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="blog-details.html" aria-label="Next">
+                                            <span aria-hidden="true">
+                                                <i class='bx bx-chevron-right'></i>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Blog Page Area -->
+
+        <!-- Start Footer Area -->
+        {% block footer %}
+            {% include 'front/footer.html' %}
+        {% endblock footer %}
+        <!-- End Footer Area -->
+
+        <!-- Start Copy Area -->
+        {% block copy_area %}
+        {% include 'front/copy_area.html' %}
+        {% endblock copy_area %}      
+        <!-- End Copy Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="scrolltop-wrap">
+            <a href="#" role="button" aria-label="Scroll to top">
+                <div id="scrolltop-arrow">
+                    <i class='bx bx-chevrons-up'></i>
+                </div> 
+            </a>
+        </div>
+        <!-- End Go Top Area -->
+
+        <!-- Link Of JS -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/scrollCue.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/main.js' %}"></script>
+    </body>
+</html>

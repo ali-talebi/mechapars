@@ -1,0 +1,95 @@
+{% load static %}
+{% block footer %}
+    <div class="footer-area pt-100 pb-70 bg-color-f7faff" data-cues="slideInUp">
+            <div class="container">
+                <div class="row" data-cues="slideInUp" data-group="images">
+                    <div class="col-lg-4">
+                        <div class="footer-widget">
+                            <a href="{% url 'home:home'  %}">
+                                <img height="100px" width="100px" class="footer-logo" src="{% static 'front/assets/images/logo1.png' %}" alt="image">
+                            </a>
+                            <p>در اینجا انواع مختلفی از قسمت‌های Lorem Ipsum موجود است، اما اکثریت آنها با طنز تزریقی یا کلمات تصادفی‌سازی شده دچار تغییر شده‌اند که حتی اندکی هم باورپذیر به نظر نمی‌رسند. </p>
+
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class='bx bxl-instagram instagram'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/" target="_blank">
+                                        <i class='bx bxl-google instagram'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer-widget-style">
+                            <h3>پیوندها</h3>
+                            <ul>
+                                <li><a href="index.html">صفحه اصلی</a></li>
+                                <li><a href="pricing.html">قیمت گذاری</a></li>
+                                <li><a href="about.html">درباره ما</a></li>
+                                <li><a href="service.html">خدمات</a></li>
+                                <li><a href="blog.html">وبلاگ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer-widget-style">
+                            <h3>خدمات</h3>
+                            <ul>
+                                <li><a href="service-details.html">تجزیه و تحلیل داده ها</a></li>
+                                <li><a href="service-details.html">هوش مصنوعی</a></li>
+                                <li><a href="service-details.html">تجسم داده ها</a></li>
+                                <li><a href="service-details.html">یادگیری عمیق</a></li>
+                                <li><a href="service-details.html">مدل سازی آماری</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer-widget-style">
+                            <h3>مجاز</h3>
+                            <ul>
+                                <li><a href="team.html">شرایط استفاده</a></li>
+                                <li><a href="terms-conditions.html">شرایط و ضوابط</a></li>
+                                <li><a href="privacy-policy.html">سیاست حفظ حریم خصوصی</a></li>
+                                <li><a href="privacy-policy.html">پلیس کوکی</a></li>
+                                <li><a href="contact.html">با ما تماس بگیرید</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer-widget-style location">
+                            <h3>مخاطب</h3>
+                            <ul>
+                                <li>
+                                    <i class="flaticon-telephone-call"></i>
+                                    <a href="tel:80021620232">(800) 216 20232</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    <a href="/cdn-cgi/l/email-protection#5e3a3128371e37303831703d3133"><span class="__cf_email__" data-cfemail="ddb9b2abb49db4b3bbb2f3beb2b0">[ایمیل محافظت شده]</span></a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-placeholder"></i>
+                                    <span>شماره 12، ساختمان روبان، ولز استرالیا</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock footer %}

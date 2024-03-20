@@ -1,0 +1,115 @@
+{% load static  %}
+{% block navbar %}
+        <nav  class="wile-navbar style navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home:home'  %}">
+                    <img width="50px" height="50px" src="{% static 'front/assets/images/logo1.png' %}" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحه اصلی</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item active" href="{% url 'home:home' %}">نسخه ی نمایشی خانه </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحات</a>
+                            
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownPages">
+                                <li>
+                                    <a class="dropdown-item" href="#">درباره ما</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">گواهینامه ها</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'account:team'  %}">تیم</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'account:logout'  %}"> خروج</a>
+                                </li>
+                                {% else %}
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'account:login'  %}"> ورود</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'account:register'  %}">ثبت نام</a>
+                                    
+                                {% endif %}
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCourses" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">پروژه ها</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCourses">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'projects:total_projects'  %}">پروژه ها</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCourses" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">خدمات</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCourses">
+                                <li>
+                                    <a class="dropdown-item" href="services.html">خدمات</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="service-details.html">جزئیات خدمات</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCourses" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">وبلاگ</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownCourses">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'blog:total_posts'  %}">وبلاگ</a>
+  
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contactus:contactus' %}">با ما تماس بگیرید</a>
+                        </li>
+                    </ul>
+
+                    <ul class="search-progress">
+                        <li class="others-options d-flex align-items-center">
+                            <div class="all-time d-flex align-items-center">
+                                <a href="tel:1800001658">
+                                    <i class="flaticon-telephone-call"></i>
+                                </a>
+                                <div class="phone">
+                                    <span class="make">تماس بگیر</span>
+                                    <div class="phone-content">
+                                        <a href="tel:834485847324">+8344 85847 324</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu">
+                                <a href="contact.html" class="common-btn">شروع کنید</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+{% endblock navbar %}

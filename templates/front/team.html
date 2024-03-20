@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Link Of CSS -->
+        <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/boxicon.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/flaticon_mycollection.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/scrollCue.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/rtl.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/responsive.css' %}">
+
+        <title>تیم متخصصین ما</title>
+        <link rel="icon" type="image/png" href="{% static 'front/assets/images/logo1.png' %}">
+    </head>
+
+    <body>
+        <!-- Preloader -->
+
+        <!-- Preloader End -->
+
+        <!-- Start Header Area -->
+        <div class="header-area">
+            <!-- Start Top Header Area -->
+            <div class="top-header-area style">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="top-header-info">
+                                <ul>
+                                    <li>نشانی:<a href="https://www.google.com/" target="_blank">No. 12, Ribbon Wales  Australia</a>
+                                    </li>
+                                    <li>به ما ایمیل بزنید:<a href="/cdn-cgi/l/email-protection#5b3f342d326f68696e1b3c363a323775383436"><span class="__cf_email__" data-cfemail="670308110e5354555227000a060e0b4904080a">[ایمیل محافظت شده]</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-4">
+                            <div class="top-header-social">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class='bx bxl-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/" target="_blank">
+                                            <i class='bx bxl-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/" target="_blank">
+                                            <i class='bx bxl-instagram'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com/" target="_blank">
+                                            <i class='bx bxl-google'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Top Header Area -->
+    
+            <!-- Navbar Area Start -->
+        {% block navbar %}
+        {% include 'front/navbar.html'  %}
+        {% endblock navbar  %}
+            <div>
+        {% block messages %}
+        {% include 'front/messages.html'  %}
+        {% endblock messages %}
+        </div>
+            <!-- Navbar Area End -->
+        </div>
+
+        <!-- Start Page Banner Area -->
+        <div class="page-banner-area">
+            <div class="container">
+                <div class="page-heading">
+                    <h1>تیم</h1>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:home' %}">صفحه اصلی</a>
+                        </li>
+                        <li>تیم</li>
+                    </ul>
+                    <!-- shape -->
+                    <img class="page-shape-1 moveVertical" src="{% static 'front/assets/images/shape/page-banner-shape-1.png' %}" alt="image">
+                    <img class="page-shape-2 rotate" src="{% static 'front/assets/images/shape/page-banner-shape-2.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner Area -->
+
+        <!-- Start Team Area -->
+        <div class="team-area pt-100 pb-70">
+            <div class="container">
+                <div class="row" data-cues="slideInUp" data-duration="900">
+                    {% for i in team %}
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="team-card">
+                            <img width="100px" height="100px" src="{{ i.my_team_person.picture.url }}" alt="image">
+                            <div class="team-info">
+                                <h3>{{ i.my_team_person.first_name }} {{ i.my_team_person.last_name }}</h3>
+                                <span>{{ i.introduce }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+                  
+            <div class="service-pagination">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                      {% if team.has_previous %}
+                            <li class="page-item ">
+                            <a class="page-link" href="{% url 'account:team' team.previous_page_number  %}" tabindex="-1">قبلی</a>
+                        </li>
+                      {% endif %}
+
+                    {% if team.has_next %}
+                    <li class="page-item">
+                      <a class="page-link" href="{% url 'account:team' team.next_page_number  %}">بعدی</a>
+                    </li>
+                  {% endif %}
+                  </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End Team Area -->
+
+        <!-- Start Subscribe Area -->
+        <div class="subscribe-area" data-cues="fadeIn" data-duration="800">
+            <div class="container">
+                <div class="subscribe">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <div class="section-heading">
+                                <h2>به خبرنامه ما بپیوندید و به روز شوید</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="ایمیل خود را وارد کنید">
+                                    <button type="submit" class="common-btn">اکنون مشترک شوید</button>
+                                </div>
+                                <img class="newsletter-shape-6" src="{% static 'front/assets/images/shape/newsletter-shape-6.png'%}" alt="image">
+                            </form>
+                        </div>
+                    </div>
+                    <img class="newsletter-shape-5" src="{% static 'front/assets/images/shape/newsletter-shape-5.png'%}" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Subscribe Area -->
+
+        <!-- Start Footer Area -->
+        {% block footer %}
+            {% include 'front/footer.html' %}
+        {% endblock footer %}
+        <!-- End Footer Area -->
+
+        <!-- Start Copy Area -->
+
+        {% block copy_area %}
+        {% include 'front/copy_area.html' %}
+        {% endblock copy_area %}
+        <!-- End Copy Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="scrolltop-wrap">
+            <a href="#" role="button" aria-label="Scroll to top">
+                <div id="scrolltop-arrow">
+                    <i class='bx bx-chevrons-up'></i>
+                </div> 
+            </a>
+        </div>
+        <!-- End Go Top Area -->
+
+        <!-- Link Of JS -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/scrollCue.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/main.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+{% block messages %}
+{% if messages %}
+    {% for msg in messages %}
+        <div style="margin-top: 75px" class="alert alert-primary" role="alert">
+            {{ msg }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock messages %}

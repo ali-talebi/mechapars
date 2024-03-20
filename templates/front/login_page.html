@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Link Of CSS -->
+        <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/boxicon.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/flaticon_mycollection.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/scrollCue.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/rtl.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/responsive.css' %}">
+
+        <title>صفحه ورود </title>
+        <link rel="icon" type="image/png" href="{% static 'front/assets/images/favicon.png' %}">
+    </head>
+
+    <body>
+        <!-- Preloader -->
+
+        <!-- Preloader End -->
+
+        <!-- Start Header Area -->
+        <div class="header-area">
+            <!-- Start Top Header Area -->
+            <div class="top-header-area style">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="top-header-info">
+                                <ul>
+                                    <li>نشانی:<a href="https://www.google.com/" target="_blank">No. 12, Ribbon Wales  Australia</a>
+                                    </li>
+                                    <li>به ما ایمیل بزنید:<a href="/cdn-cgi/l/email-protection#e0848f9689d4d3d2d5a0878d81898cce838f8d"><span class="__cf_email__" data-cfemail="50343f26396463626510373d31393c7e333f3d">[ایمیل محافظت شده]</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-4">
+                            <div class="top-header-social">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class='bx bxl-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/" target="_blank">
+                                            <i class='bx bxl-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/" target="_blank">
+                                            <i class='bx bxl-instagram'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com/" target="_blank">
+                                            <i class='bx bxl-google'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Top Header Area -->
+
+            <!-- Navbar Area Start -->
+                {% block navbar %}
+                {% include 'front/navbar.html'  %}
+                {% endblock navbar  %}
+                
+                {% if messages %}
+                {% for msg in messages %}
+                    <div style="margin-top: 150px" class="alert alert-primary" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                {% endif %}
+            <!-- Navbar Area End -->
+        </div>
+
+                {% block messages %}
+                {% include 'front/messages.html'  %}
+                {% endblock messages %}
+
+        <!-- Start Page Banner Area -->
+        <div class="page-banner-area">
+            <div class="container">
+                <div class="page-heading">
+                    <h1>حساب من</h1>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:home' %}">صفحه اصلی</a>
+                        </li>
+                        <li>حساب من</li>
+                    </ul>
+                    <!-- shape -->
+                    <img class="page-shape-1 moveVertical" src="{% static  'front/assets/images/shape/page-banner-shape-1.png' %}" alt="image">
+                    <img class="page-shape-2 rotate" src="{% static  'front/assets/images/shape/page-banner-shape-2.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner Area -->
+
+        <!-- My Account -->
+        <div class="profile-authentication-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="login-form">
+                            <h2>وارد شدن</h2>
+                            <form method="POST" action="" >
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>نام کاربری</label>
+                                    <input type="text" class="form-control" name="username">
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>کلمه عبور</label>
+                                    <input type="text" name="password" class="form-control">
+                                </div>
+
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="flexCheckDefault" class="form-check-input">
+                                            <label class="form-check-label" for="flexCheckDefault">مرا به خاطر بسپار</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password">
+                                        <div class="lost-your-password">
+                                            <a href="#">رمز عبور خود را فراموش کرده اید؟</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="default-btn">وارد شدن</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- My Account -->
+
+        <!-- Start Footer Area -->
+        {% block footer %}
+            {% include 'front/footer.html' %}
+        {% endblock footer %}
+        <!-- End Footer Area -->
+
+        <!-- Start Copy Area -->
+        {% block copy_area %}
+        {% include 'front/copy_area.html' %}
+        {% endblock copy_area %}
+        <!-- End Copy Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="scrolltop-wrap">
+            <a href="#" role="button" aria-label="Scroll to top">
+                <div id="scrolltop-arrow">
+                    <i class='bx bx-chevrons-up'></i>
+                </div>
+            </a>
+        </div>
+        <!-- End Go Top Area -->
+
+        <!-- Link Of JS -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/scrollCue.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/main.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Link Of CSS -->
+        <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.rtl.min.css' %}'">
+        <link rel="stylesheet" href="{% static 'front/assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/boxicon.min.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/flaticon_mycollection.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/scrollCue.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/rtl.css' %}">
+        <link rel="stylesheet" href="{% static 'front/assets/css/responsive.css' %}">
+
+        <title>جزپیات </title>
+        <link rel="icon" type="image/png" href="{% static 'front/assets/images/logo1.png' %}">
+    </head>
+
+    <body>
+        <!-- Preloader -->
+
+        <!-- Preloader End -->
+        
+        <!-- Start Header Area -->
+        <div class="header-area">
+            <!-- Start Top Header Area -->
+            <div class="top-header-area style">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-7 col-md-8">
+                            <div class="top-header-info">
+                                <ul>
+                                    <li>نشانی:<a href="https://www.google.com/" target="_blank">No. 12, Ribbon Wales  Australia</a>
+                                    </li>
+                                    <li>به ما ایمیل بزنید:<a href="/cdn-cgi/l/email-protection#d4b0bba2bde0e7e6e194b3b9b5bdb8fab7bbb9"><span class="__cf_email__" data-cfemail="33575c455a0700010673545e525a5f1d505c5e">[ایمیل محافظت شده]</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-4">
+                            <div class="top-header-social">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class='bx bxl-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/" target="_blank">
+                                            <i class='bx bxl-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/" target="_blank">
+                                            <i class='bx bxl-instagram'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com/" target="_blank">
+                                            <i class='bx bxl-google'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start Top Header Area -->
+    
+            <!-- Navbar Area Start -->
+                {% block navbar %}
+                {% include 'front/navbar.html'  %}
+                {% endblock navbar  %}
+            
+                {% if messages %}
+                {% for msg in messages %}
+                    <div  class="alert alert-primary" role="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                {% endif %}
+            <!-- Navbar Area End -->
+        </div>
+
+        <!-- Start Page Banner Area -->
+        <div class="page-banner-area">
+            <div class="container">
+                <div class="page-heading">
+                    <h1>جزئیات پروژه</h1>
+                    <ul>
+                        <li>
+                            <a href="{% url 'home:home'  %}">صفحه اصلی</a>
+                        </li>
+                        <li>جزئیات پروژه</li>
+                    </ul>
+                    <!-- shape -->
+                    <img class="page-shape-1 moveVertical" src="{% static 'front/assets/images/shape/page-banner-shape-1.png' %}" alt="image">
+                    <img class="page-shape-2 rotate" src="{% static 'front/assets/images/shape/page-banner-shape-2.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner Area -->
+
+        <!-- Start Project Page Area -->
+        <div class="project-details-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="project-details">
+                            <div class="project-details-card">
+                                <img src="assets/images/project/project-image-10.jpg" alt="image">
+                                <h3>خدمات مشاوره ضبط داده و ML برای ترسیم راه به سمت یک سفارشی</h3>
+                                <p>این را به اولین مولد واقعی در اینترنت تبدیل می کنیم. </p>
+                                <div class="batter-solution">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="better">
+                                                <i class='bx bx-check'></i>
+                                                <div class="">
+                                                    <h5>چالش ها</h5>
+                                                    <span>راه بهتر برای دانستن</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <p>این را به اولین مولد واقعی در اینترنت تبدیل می کنیم. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="batter-solution style">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="better">
+                                                <i class='bx bx-check'></i>
+                                                <div class="">
+                                                    <h5>راه حل ها</h5>
+                                                    <span>راه بهتر برای دانستن</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <p>این را به اولین مولد واقعی در اینترنت تبدیل می کنیم. </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="processing-system">
+                                    <h4>سیستم پردازش</h4>
+                                    <p>بسیاری از بسته‌های انتشارات دسک‌تاپ و ویرایشگرهای صفحه وب اکنون از Lorem Ipsum به عنوان متن مدل پیش‌فرض خود استفاده می‌کنند و جستجوی «lorem ipsum» بسیاری از وب‌سایت‌ها را که هنوز در مراحل ابتدایی خود هستند، نشان می‌دهد. </p>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <div class="system-card">
+                                                <h5>پژوهش</h5>
+                                                <p>Lorem Ipsum، باید مطمئن باشید که چیزی در وسط متن پنهان نشده باشد.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <div class="system-card">
+                                                <h5>مشکل را شناسایی کنید</h5>
+                                                <p>Lorem Ipsum، باید مطمئن باشید که چیزی در وسط متن پنهان نشده باشد.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <div class="system-card">
+                                                <h5>مشکل را حلکن</h5>
+                                                <p>Lorem Ipsum، باید مطمئن باشید که چیزی در وسط متن پنهان نشده باشد.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h4>نتیجه</h4>
+                                    <p>اگر می‌خواهید از قسمتی از Lorem Ipsum استفاده کنید، باید مطمئن شوید که هیچ چیز شرم‌آوری در وسط متن پنهان نشده باشد. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="support">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-management"></i>
+                                    <h4>تیم پشتیبانی</h4>
+                                    <p>جاناتان تروت جفری ویلیامز</p>
+                                </li>
+                                <li>
+                                    <i class="flaticon-technology"></i>
+                                    <h4>فن آوری ها</h4>
+                                    <p>پشته علم داده پایتون، Tesseract</p>
+                                </li>
+                                <li>
+                                    <i class="flaticon-time"></i>
+                                    <h4>بازه زمانی</h4>
+                                    <p>5 هفته</p>
+                                </li>
+                                <li>
+                                    <i class="flaticon-globe"></i>
+                                    <h4>سایت اینترنتی</h4>
+                                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b12353d341b3f342d323e233a362b373e75383436">[ایمیل محافظت شده]</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Project Page Area -->
+
+        <!-- Start Footer Area -->
+                    {% block footer %}
+                        {% include 'front/footer.html' %}
+                    {% endblock footer %}
+        <!-- End Footer Area -->
+
+        <!-- Start Copy Area -->
+        {% block copy_area %}
+        {% include 'front/copy_area.html' %}
+        {% endblock copy_area %}
+        <!-- End Copy Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="scrolltop-wrap">
+            <a href="#" role="button" aria-label="Scroll to top">
+                <div id="scrolltop-arrow">
+                    <i class='bx bx-chevrons-up'></i>
+                </div> 
+            </a>
+        </div>
+        <!-- End Go Top Area -->
+
+        <!-- Link Of JS -->
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/scrollCue.min.js' %}"></script>
+        <script src="{% static 'front/assets/js/main.js' %}"></script>
+    </body>
+</html>
